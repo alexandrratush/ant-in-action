@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<project name="test">
+	<target name="get_properties">
+		<property file="ant.properties"></property>
+		<echo>Imported properties</echo>
+	</target>
+</project>
