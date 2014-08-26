@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<project name="ftp">
+	<target name="create">
+		<ftp action="mkdir"  
+			server="ftp_server"
+			userid="alexr_ftp"
+			password="1111"
+			remotedir="/home/alexr/test">
+		</ftp>
+	</target>
+</project>
