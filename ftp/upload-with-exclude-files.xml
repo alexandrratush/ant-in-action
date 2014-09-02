@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<project name="deploy_server" default="deploy_server">
+
+	<target name="deploy_server">
+        <ftp server="${ftp.server}"
+             userid="${ftp.userid}"
+             password="${ftp.password}"
+             port="21"
+             remotedir="${ftp.remotedir}server"
+             passive="yes"
+             binary="no"
+             depends="yes">
+            <fileset dir="server">
+                <exclude name="*.ppj"/>
+                <exclude name="*.ppx"/>
+            </fileset>
+        </ftp>
+    </target>
+</project>
