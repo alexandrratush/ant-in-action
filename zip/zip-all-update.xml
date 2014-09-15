@@ -1,0 +1,5 @@
+<project name="ZipTest" default="init">
+	<target name="init">
+		<zip destfile="test.zip" basedir="test-2" update="true"/>
+	</target>
+</project>
