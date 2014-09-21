@@ -1,0 +1,6 @@
+<project name="SSHTest" default="init">
+	<target name="init">
+		<scp file="myfile.txt" todir="root:password@62.109.8.253:/var/www/html/test/" 
+		verbose="true" trust="true"/>
+	</target>
+</project>
