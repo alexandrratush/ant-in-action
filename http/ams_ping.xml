@@ -1,0 +1,14 @@
+<project name="HTTP" default="ping">
+	<property file="build.properties"/>
+	
+	<taskdef name="http" classname="org.missinglink.ant.task.http.HttpClientTask"/>
+	 
+	<target name="ping">
+		<http url="http://${host}:${port}/admin/ping" printresponse="true">
+			<query>
+				 <parameter name="auser" value="${admin}"/>
+				 <parameter name="apswd" value="${password}"/>
+			</query>
+		</http>
+	</target>
+</project>
