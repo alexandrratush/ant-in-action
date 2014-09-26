@@ -1,13 +1,26 @@
 <project name="HTTP" default="ping">
 	<property file="build.properties"/>
+	<property name="url" value="http://${host}:${port}/admin/"/>
 	
 	<taskdef name="http" classname="org.missinglink.ant.task.http.HttpClientTask"/>
 	 
 	<target name="ping">
-		<http url="http://${host}:${port}/admin/ping" printresponse="true">
+		<property name="command" value="ping"/>
+		<http url="${url}${command}" printresponse="true">
 			<query>
 				 <parameter name="auser" value="${admin}"/>
 				 <parameter name="apswd" value="${password}"/>
+			</query>
+		</http>
+	</target>
+	
+	<target name="reloadApp">
+		<property name="command" value="reloadApp"/>
+		<http url="${url}${command}" printresponse="true">
+			<query>
+				 <parameter name="auser" value="${admin}"/>
+				 <parameter name="apswd" value="${password}"/>
+				 <parameter name="appInst" value="test/main"/>
 			</query>
 		</http>
 	</target>
