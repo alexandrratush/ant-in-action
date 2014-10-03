@@ -1,0 +1,12 @@
+<project name="AntCall" default="init">
+	<target name="doSomething">
+		<property name="param" value="${param.in}"/>
+		<echo message="${param}"/>
+	</target>
+	
+	<target name="init">
+		<antcall target="doSomething">
+			<param name="param.in" value="antcall testing ok!!!"/>
+		</antcall>
+	</target>
+</project>
