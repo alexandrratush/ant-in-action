@@ -1,0 +1,12 @@
+<project name="Input" default="init">
+	<property file="build.properties"/>
+
+	<target name="init">
+		<input>Press Return key to continue...</input>
+	</target>
+	
+	<target name="inputPass">
+		<input message="Please enter password:" addproperty="pass"/>
+		<echo message="Password: ${pass}"/>
+	</target>
+</project>
