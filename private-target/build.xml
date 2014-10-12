@@ -1,0 +1,9 @@
+<project name="AntCall" default="init">
+	<target name="-internal">
+		<echo message="internal target call"/>
+	</target>
+	
+	<target name="init">
+		<antcall target="-internal"/>
+	</target>
+</project>
