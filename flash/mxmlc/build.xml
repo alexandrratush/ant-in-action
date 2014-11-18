@@ -1,7 +1,7 @@
 <project name="hello ant world!" default="build" basedir=".">
 
-	<taskdef resource="flexTasks.tasks" classpath="c:/Program Files (x86)/Adobe/Adobe Flash Builder 4.6/sdks/4.6.0/ant/lib/flexTasks.jar"/>
-	<property name="FLEX_HOME" value="c:/Program Files (x86)/Adobe/Adobe Flash Builder 4.6/sdks/4.6.0"/>
+	<property file="build.properties"/>
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
 
 	<property name="src" location="."/>
 	<property name="main.file" value="Main.as"/>
