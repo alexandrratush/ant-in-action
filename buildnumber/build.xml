@@ -1,7 +1,13 @@
 <project name="BuildNumber" default="init">
 	<target name="init">
-		<buildnumber file="build.number" />
-		<property name="version.code" value="${build.number}" />
+		<buildnumber file="build.number"/>
+		<tstamp>
+			<format property="build.time"
+			pattern="dd-MM-yy hh:mm"
+			unit="hour"/>
+		</tstamp>
+		<property name="version.code" value="${build.time}"/>
+<!--	<property name="version.code" value="${build.number}"/> -->
 		<echo>Version: ${version.code}</echo>
 	</target>
 </project>
