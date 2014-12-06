@@ -1,5 +1,5 @@
-<project name="antcall" default="init">
-	<target name="init">
+<project name="antcall" default="example1">
+	<target name="example1">
 		<antcall target="doSomething">
 			<param name="param1" value="antcall testing."/>
 		</antcall>
