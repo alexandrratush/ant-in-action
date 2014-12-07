@@ -1,7 +1,7 @@
-<project name="Attrib" default="exampl1">
+<project name="Attrib" default="example1">
 	<property name="file" location="test.bat"/>
 
-	<target name="init">
+	<target name="example1">
 		<attrib file="${file}" readonly="false" hidden="false" verbose="true"/>
 	</target>
 </project>
