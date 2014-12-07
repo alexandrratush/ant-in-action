@@ -1,4 +1,4 @@
-<project name="AttribTest" default="init">
+<project name="Attrib" default="exampl1">
 	<property name="file" location="test.bat"/>
 
 	<target name="init">
