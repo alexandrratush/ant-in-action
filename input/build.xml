@@ -3,7 +3,7 @@
 		<input>Press Return key to continue...</input>
 	</target>
 	
-	<target name="inputPass">
+	<target name="example2">
 		<input message="Please enter password:" addproperty="pass"/>
 		<echo message="Password: ${pass}"/>
 	</target>
