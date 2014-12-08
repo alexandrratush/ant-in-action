@@ -1,7 +1,5 @@
-<project name="Input" default="init">
-	<property file="build.properties"/>
-
-	<target name="init">
+<project name="Input" default="example1">
+	<target name="example1">
 		<input>Press Return key to continue...</input>
 	</target>
 	
