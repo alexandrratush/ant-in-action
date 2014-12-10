@@ -1,0 +1,17 @@
+<project name="FileSet" default="example1">
+	<property name="dir" value="test"/>
+
+	<target name="example1">
+		<fileset dir="${dir}" casesensitive="yes">
+			<include name="**/*.txt"/>
+			<exclude name="**/*test*"/>
+		</fileset>
+	</target>
+	
+	<target name="prepare">
+		<mkdir dir="${dir}"/>
+		<echo file="${dir}/test.txt" append="false"></echo>
+		<echo file="${dir}/1.txt" append="false"></echo>
+		<echo file="${dir}/2.txt" append="false"></echo>
+	</target>
+</project>
