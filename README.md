@@ -8,5 +8,6 @@ The Apache Ant testing and examples of using.
 * [attrib](attrib)
 * [buildnumber](buildnumber)
 * [dirname](dirname)
+* [fileset](fileset)
 * [input](input)
 * [mkdir](mkdir)
