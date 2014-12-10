@@ -9,3 +9,4 @@ The Apache Ant testing and examples of using.
 * [buildnumber](buildnumber)
 * [dirname](dirname)
 * [input](input)
+* [mkdir](mkdir)
