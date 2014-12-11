@@ -7,6 +7,7 @@ The Apache Ant testing and examples of using.
 * [antcall](antcall)
 * [attrib](attrib)
 * [buildnumber](buildnumber)
+* [delete](delete)
 * [dirname](dirname)
 * [fileset](fileset)
 * [input](input)
