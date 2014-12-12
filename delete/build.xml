@@ -2,6 +2,7 @@
 	<property name="dir" value="test"/>
 
 	<target name="example1" depends="clear, prepare example1">
+		<!-- deletes the file test/test.txt -->
 		<delete file="${dir}/test.txt"/>
 	</target>
 	
