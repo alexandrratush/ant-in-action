@@ -1,0 +1,14 @@
+<project name="AntCallBack" default="example">
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+	
+	<target name="example" description="Test antcallback task">
+		<antcallback target="testcb" return="a, b"/>
+		<echo>a = ${a}</echo>
+        <echo>b = ${b}</echo>
+	</target>
+	
+	<target name="testcb">
+        <property name="a" value="A"/>
+        <property name="b" value="B"/>
+    </target>
+</project>
