@@ -4,12 +4,16 @@
 	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
 
 	<property name="project.sourcePath" location="${basedir}/src"/>
-	<property name="project.main.file" value="Main.as"/>
+	<property name="project.main.file" value="com/core/Main.as"/>
 	<property name="project.output.file" location="Main.swf"/>
 
 	<target name="build">
-		<mxmlc file="${project.sourcePath}/${project.main.file}" output="${project.output.file}" keep-generated-actionscript="false">
+		<mxmlc 
+			file="${project.sourcePath}/${project.main.file}" 
+			output="${project.output.file}" 
+			keep-generated-actionscript="false">
 			<static-link-runtime-shared-libraries>true</static-link-runtime-shared-libraries>
+			<source-path path-element="${project.sourcePath}"/>
 		</mxmlc>
 	</target>
 </project>
