@@ -3,13 +3,12 @@
 	<property file="build.properties"/>
 	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
 
-	<property name="src" location="."/>
+	<property name="src.path" location="."/>
 	<property name="main.file" value="Main.as"/>
-	<property name="full.src.path" location="${src}/${main.file}"/>
-	<property name="output.swf" location="main.swf"/>
+	<property name="output.file" location="Main.swf"/>
 
 	<target name="build">
-		<mxmlc file="${full.src.path}" output="${output.swf}" keep-generated-actionscript="false">
+		<mxmlc file="${src.path}/${main.file}" output="${output.file}" keep-generated-actionscript="false">
 			<static-link-runtime-shared-libraries>true</static-link-runtime-shared-libraries>
 		</mxmlc>
 	</target>
