@@ -1,4 +1,4 @@
-<project name="hello ant world!" default="build" basedir=".">
+<project name="mxmlc" default="build" basedir=".">
 
 	<property file="build.properties"/>
 	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
