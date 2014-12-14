@@ -4,6 +4,7 @@
 	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
 
 	<property name="project.sourcePath" location="${basedir}/src"/>
+	<property name="project.libraryPath" location="${basedir}/lib"/>
 	<property name="project.main.file" value="com/core/Main.as"/>
 	<property name="project.output.file" location="Main.swf"/>
 
@@ -14,6 +15,7 @@
 			keep-generated-actionscript="false">
 			<static-link-runtime-shared-libraries>true</static-link-runtime-shared-libraries>
 			<source-path path-element="${project.sourcePath}"/>
+			<library-path dir="${project.libraryPath}" includes="*.swc" />
 		</mxmlc>
 	</target>
 </project>
