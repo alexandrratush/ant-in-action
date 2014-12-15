@@ -17,6 +17,7 @@
 			<source-path path-element="${project.sourcePath}"/>
 			<library-path dir="${project.libraryPath}" includes="*.swc" />
 			<incremental>true</incremental>
+			<debug>true</debug>
 		</mxmlc>
 	</target>
 </project>
