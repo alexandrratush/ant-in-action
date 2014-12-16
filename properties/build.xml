@@ -1,0 +1,14 @@
+<project name="Properties" default="example">
+	<target name="example">
+		<echo message="$${basedir} = ${basedir}"/>
+		<echo message="$${ant.file} = ${ant.file}"/>
+		<echo message="$${ant.version} = ${ant.version}"/>
+		<echo message="$${ant.project.name} = ${ant.project.name}"/>
+		<echo message="$${ant.project.default-target} = ${ant.project.default-target}"/>
+		<echo message="$${ant.project.invoked-targets} = ${ant.project.invoked-targets}"/>
+		<echo message="$${ant.java.version} = ${ant.java.version}"/>
+		<echo message="$${ant.core.lib} = ${ant.core.lib}"/>
+		<echo message="$${ant.home} = ${ant.home}"/>
+		<echo message="$${ant.library.dir} = ${ant.library.dir}"/>
+	</target>
+</project>
