@@ -15,3 +15,4 @@ The Apache Ant testing and examples of using.
 * [input](input)
 * [mkdir](mkdir)
 * [properties](properties)
+* [xmltask](xmltask)
