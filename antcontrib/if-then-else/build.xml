@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<project name="if-then-else" default="example1">
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="d:/Program Files/apache-ant-1.9.4/lib/ant-contrib-0.3.jar"/>
+		</classpath>
+	</taskdef>
+	
+	<property name="version" value="test"/>
+
+	<target name="example1"> 
+		<if>
+			<equals arg1="${version}" arg2="test" />
+			<then>
+				<echo message="The project version is test" />
+			</then>
+			<else>
+				<echo message="The project version is production" />
+			</else>
+		</if> 
+	</target>
+</project>
