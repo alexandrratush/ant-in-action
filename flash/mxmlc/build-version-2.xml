@@ -1,8 +1,5 @@
 <project name="mxmlc" default="build" basedir=".">
-
 	<property file="build.properties"/>
-	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
-
 	<property name="project.src.path" location="${basedir}/src"/>
 	<property name="project.lib.path" location="${basedir}/lib"/>
 	<property name="project.document.class" value="com/core/Main.as"/>
