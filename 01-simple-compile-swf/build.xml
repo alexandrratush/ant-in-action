@@ -1,0 +1,22 @@
+<project name="Build swf" default="build" basedir=".">
+
+	<!-- SDKs properties -->
+	<property file="../sdk.properties"/>
+	<!-- project properties -->
+	<property file="build.properties"/>
+	
+	<target name="build"  description="Build swf">
+		<echo message="Building swf"/>
+		<java jar="${mxmlc}" fork="true" failonerror="true">
+			<arg value="-debug=false" />
+			<arg value="-optimize=true" />
+			<arg value="-verbose-stacktraces=true" />
+			<arg value="-load-config=${flex_config}"/>
+			<arg value="-swf-version=${swf_version}"/>
+			<arg value="-source-path+=${source_path}"/>
+			<arg value="-file-specs=${source_path}/${document_class}"/>
+			<arg value="-output=${out_path}/${out_swf_name}"/>
+		</java>
+	</target>
+
+</project>
