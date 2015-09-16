@@ -1,7 +1,0 @@
-<project name="BuildNumber" default="example1">
-	<target name="example1">
-		<buildnumber file="build.number"/>
-		<property name="version.code" value="${build.number}"/>
-		<echo>Version: ${version.code}</echo>
-	</target>
-</project>

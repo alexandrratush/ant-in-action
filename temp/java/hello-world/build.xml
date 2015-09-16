@@ -1,9 +1,0 @@
-<project default="compile">
-	<target name="compile">
-		<javac srcdir="."
-			destdir="."
-			debug="on"
-			source="1.4"
-		/>
-	</target>
-</project>

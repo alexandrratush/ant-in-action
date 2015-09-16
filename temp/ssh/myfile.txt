@@ -1,1 +1,0 @@
-Copies a file to remote machine running an SSH.

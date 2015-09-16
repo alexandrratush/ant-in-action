@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<project name="rename" default="rename">
-	<target name="rename">
-		<move file="rename-file" tofile="rename-file-new"/>
-	</target>
-</project>

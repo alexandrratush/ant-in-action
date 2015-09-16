@@ -1,7 +1,0 @@
-<project name="Mkdir" default="example1">
-	<property name="dir" value="test"/>
-
-	<target name="example1">
-		<mkdir dir="${dir}"/>
-	</target>
-</project>

@@ -1,9 +1,0 @@
-<project name="jsfl script run" default="main">
-	<property name="FLASH" value="C:\Program Files (x86)\Adobe\Adobe Flash CS6\Flash.exe"/>
-
-	<target name="main">
-		<exec executable="${FLASH}">
-			<arg line="hello_world.jsfl" />
-		</exec>
-	</target>
-</project>
