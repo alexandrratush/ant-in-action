@@ -33,11 +33,14 @@
 	</target>
 	
 	<target name="run-tests">
-		<flexunit swf="${out_path}/${tests_swf_name}" 
-			toDir="${out_path}" 
+		<flexunit player="flash"
+			swf="${out_path}/${tests_swf_name}" 
+			toDir="${report_path}" 
 			haltonfailure="false" 
+			failureproperty="flexunit.failure"
 			verbose="true" 
-			localTrusted="true" />
+			localTrusted="true"
+			command="${tests_launch_app}"/>
 			
 		<junitreport todir="${report_path}">
 			<fileset dir="${report_path}">
