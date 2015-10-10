@@ -1,0 +1,29 @@
+<project name="Android certificate creation" default="main" basedir=".">
+
+	<!-- SDKs properties -->
+	<property file="../sdk.properties"/>
+	<!-- project properties -->
+	<property file="build.properties"/>
+	
+	<target name="main" depends="create_android_certificate"/>
+	
+	<target name="create_android_certificate" description="Create certificate" depends="prepare_certificate_path">
+		<echo message="Certificate for android"/>
+		<java jar="${adt}" dir="${basedir}" fork="true" failonerror="true">
+			<arg value="-certificate"/>
+			<arg value="-cn"/>
+			<arg value="${android_certificate_name}"/>
+			<arg value="2048-RSA"/>
+			<arg value="${android_certificate_path}/${android_certificate_name}"/>
+			<arg value="${android_certificate_pass}"/>
+		</java>
+	</target>
+	
+	<target name="prepare_certificate_path">
+		<delete quiet="true">
+			<fileset dir="${android_certificate_path}"/>
+		</delete>
+		<mkdir dir="${android_certificate_path}"/>
+	</target>
+
+</project>
