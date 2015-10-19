@@ -44,5 +44,24 @@
 	<target name="prepare" description="Prepare files">
 		<delete quiet="true" dir="${output_path}"/>
 	</target>
+	
+	<target name="uninstallApp_and_installApp" description="Install apk to the android device">
+		<echo message="Uninstall ${android_apk_name}"/>
+		<java jar="${adt}" dir="${basedir}" fork="true" failonerror="false">
+			<arg value="-uninstallApp"/>
+			<arg value="-platform"/>
+			<arg value="android"/>
+			<arg value="-appid"/>
+			<arg value="${appid}"/>
+		</java>
+		<echo message="Install ${output_path}/${android_apk_name}"/>
+		<java jar="${adt}" dir="${basedir}" fork="true" failonerror="true">
+			<arg value="-installApp"/>
+			<arg value="-platform"/>
+			<arg value="android"/>
+			<arg value="-package"/>
+			<arg value="${output_path}/${android_apk_name}"/>
+		</java>
+	</target>
 
 </project>
