@@ -63,5 +63,16 @@
 			<arg value="${output_path}/${android_apk_name}"/>
 		</java>
 	</target>
+	
+	<target name="launchApp" description="Launch application">
+		<echo message="Launch ${android_apk_name}"/>
+		<java jar="${adt}" dir="${basedir}" fork="true" failonerror="true">
+			<arg value="-launchApp"/>
+			<arg value="-platform"/>
+			<arg value="android"/>
+			<arg value="-appid"/>
+			<arg value="${appid}"/>
+		</java>
+	</target>
 
 </project>
