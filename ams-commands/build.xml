@@ -1,0 +1,18 @@
+<project name="Build file for AMS" basedir=".">
+
+	<target name="startAMS">
+		<exec executable="cmd.exe">
+			<arg value="/c"/>
+			<arg value="net start AMS"/>
+		</exec>
+	</target>
+	
+	<target name="stopAMS">
+		<exec executable="cmd.exe">
+			<arg value="/c"/>
+			<arg value="net stop AMS"/>
+		</exec>
+	</target>
+	
+	<target name="restart" depends="stopAMS, startAMS"/>
+</project>
