@@ -19,7 +19,7 @@
 	
 	<target name="compile_swc" description="Making swc lib">
 		<java jar="${compc}" fork="true" failonerror="true">
-			<arg value="-load-config=${airmobile_config}"/>
+			<arg value="-load-config=${air_mobile_config}"/>
 			<arg value="-swf-version=${swf_version}"/>
 			<arg value="-source-path+=${as3_source_path}"/>
 			<arg value="-include-sources+=${as3_source_path}"/>
@@ -69,10 +69,6 @@
 		<delete dir="temp"/>
 	</target>
 	
-	<target name="copy_ane" description="Copy ane to example projects">
- 		<copy file="bin/${extension_name}" tofile="../example/ane/${extension_name}"/>
- 	</target>
-	
-	<target name="build" depends="make_temp_dirs, compile_swc, compile_jar, copy_files, build_ane, clear, copy_ane"/>
+	<target name="build" depends="make_temp_dirs, compile_swc, compile_jar, copy_files, build_ane, clear"/>
 
 </project>
