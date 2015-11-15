@@ -12,13 +12,13 @@
 	<target name="main" depends="prepare, compile-tests, run-tests"/> 
 
 	<target name="prepare">
-		<delete dir="${out_path}"/>
-		<mkdir dir="${out_path}"/>
+		<delete dir="${tests_out_path}"/>
+		<mkdir dir="${tests_out_path}"/>
 		<mkdir dir="${report_path}"/>
 	</target>
 	
 	<target name="compile-tests" description="Build swf">
-		<echo message="Building swf ${out_path}/${tests_swf_name}, version=${swf_version}"/>
+		<echo message="Building swf ${tests_out_path}/${tests_swf_name}, version=${swf_version}"/>
 		<java jar="${mxmlc}" fork="true" failonerror="true">
 			<arg value="-debug=false"/>
 			<arg value="-optimize=true" />
@@ -28,13 +28,13 @@
 			<arg value="-source-path+=${source_path}"/>
 			<arg value="-file-specs=${test_source_path}/${document_class}"/>
 			<arg value="-l+=${lib_path}"/>
-			<arg value="-output=${out_path}/${tests_swf_name}"/>
+			<arg value="-output=${tests_out_path}/${tests_swf_name}"/>
 		</java>
 	</target>
 	
 	<target name="run-tests">
 		<flexunit player="flash"
-			swf="${out_path}/${tests_swf_name}" 
+			swf="${tests_out_path}/${tests_swf_name}" 
 			toDir="${report_path}" 
 			haltonfailure="false" 
 			failureproperty="flexunit.failure"
