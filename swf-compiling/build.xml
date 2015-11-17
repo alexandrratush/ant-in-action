@@ -1,15 +1,15 @@
 <project name="Build swf" default="build" basedir=".">
 
-	<!-- SDKs properties -->
+	<property environment="env"/>
 	<property file="../sdk.properties"/>
-	<!-- project properties -->
 	<property file="build.properties"/>
 	
 	<target name="build" description="Build swf">
-		<echo message="Building swf"/>
+		<echo message="Using FLEX_HOME: ${FLEX_HOME}"/>
+		<echo message="Building swf: ${out_path}/${out_swf_name}"/>
 		<java jar="${mxmlc}" fork="true" failonerror="true">
-			<arg value="-debug=false" />
-			<arg value="-optimize=true" />
+			<arg value="-debug=false"/>
+			<arg value="-optimize=true"/>
 			<arg value="-verbose-stacktraces=true" />
 			<arg value="-load-config=${flex_config}"/>
 			<arg value="-swf-version=${swf_version}"/>
@@ -17,6 +17,8 @@
 			<arg value="-file-specs=${source_path}/${document_class}"/>
 			<arg value="-l+=${lib_path}"/>
 			<arg value="-output=${out_path}/${out_swf_name}"/>
+			<arg value="-compiler.fonts.local-fonts-snapshot="/>
+			<arg value="-static-link-runtime-shared-libraries=true"/>
 		</java>
 	</target>
 
