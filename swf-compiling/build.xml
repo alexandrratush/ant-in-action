@@ -5,10 +5,10 @@
 	<property file="build.properties"/>
 	
 	<target name="build" description="Build swf">
-		<echo message="Using FLEX_HOME: ${FLEX_HOME}"/>
-		<echo message="Building swf: ${out_path}/${out_swf_name}"/>
+		<echo message="Using SDK: ${AIRSDK_HOME}"/>
+		<echo message="Building swf: ${out_path}/${out_swf_name}, version: ${swf_version}, debug: ${is_debug}"/>
 		<java jar="${mxmlc}" fork="true" failonerror="true">
-			<arg value="-debug=false"/>
+			<arg value="-debug=${is_debug}"/>
 			<arg value="-optimize=true"/>
 			<arg value="-verbose-stacktraces=true" />
 			<arg value="-load-config=${flex_config}"/>
@@ -17,8 +17,6 @@
 			<arg value="-file-specs=${source_path}/${document_class}"/>
 			<arg value="-l+=${lib_path}"/>
 			<arg value="-output=${out_path}/${out_swf_name}"/>
-			<arg value="-compiler.fonts.local-fonts-snapshot="/>
-			<arg value="-static-link-runtime-shared-libraries=true"/>
 		</java>
 	</target>
 
