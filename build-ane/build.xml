@@ -41,7 +41,6 @@
 			<arg value="-source-path+=${as3_source_path}"/>
 			<arg value="-include-sources+=${as3_source_path}"/>
 			<arg value="-output=${temp_swc_libs_path}/${extension_swc}"/>
-			<arg value="-compiler.fonts.local-fonts-snapshot="/>
 		</java>
 	</target>
 	
