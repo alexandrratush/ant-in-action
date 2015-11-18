@@ -51,10 +51,13 @@
 			target="${javac_target}"
 			bootclasspath="${rt_jar}"
 			failonerror="true"
-			srcdir="${android_source_path}"
 			destdir="${temp_java_libs_path}"
-			classpath="${fre_jar}:${android_jar}"
 			includeantruntime="false">
+			<src path="${android_source_path}"/>
+            <classpath>
+                <pathelement location="${android_jar}"/>
+                <pathelement location="${fre_jar}"/>
+            </classpath>
 		</javac>
 		<jar basedir="${temp_java_libs_path}" destfile="${temp_ane_android_path}/${extension_jar}"/>
 	</target>
