@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <project name="Main" default="main" basedir=".">
 
-	<!-- SDKs properties -->
+	<property environment="env"/>
 	<property file="../sdk.properties"/>
-	<!-- project properties -->
 	<property file="build.properties"/>
 	
 	<taskdef resource="flexTasks.tasks" classpath="${AIR_SDK_ROOT}/ant/lib/flexTasks.jar" />
@@ -39,8 +38,7 @@
 			haltonfailure="false" 
 			failureproperty="flexunit.failure"
 			verbose="true" 
-			localTrusted="true"
-			command="${tests_launch_app}"/>
+			localTrusted="true"/>
 			
 		<junitreport todir="${report_path}">
 			<fileset dir="${report_path}">
