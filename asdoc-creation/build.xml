@@ -1,0 +1,25 @@
+<project name="Generating API Reference" default="build" basedir=".">
+
+	<property environment="env"/>
+	<property file="../sdk.properties"/>
+	<property file="build.properties"/>
+	
+	<target name="build">
+		<echo message="Using SDK: ${AIRSDK_HOME}"/>
+		<echo message="Generating API Reference"/>
+		<java jar="${asdoc}" failonerror="true" fork="true">
+			<arg value="+flexlib=${AIRSDK_HOME}/frameworks"/>
+			<arg value="-load-config=${flex_config}"/>
+			<arg value="-doc-sources=${source_path}"/>
+			<arg value="-source-path=${source_path}"/>
+
+			<!-- these two arguments are needed after switching to the AIR SDK
+			with ASC 2.0 to stop weird errors -->
+			<arg value="-theme="/>
+			<arg value="-compiler.fonts.local-fonts-snapshot="/>
+
+			<arg value="-output=${api_output}"/>
+		</java>
+	</target>
+
+</project>
