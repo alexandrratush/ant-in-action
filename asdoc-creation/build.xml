@@ -12,13 +12,15 @@
 			<arg value="-load-config=${flex_config}"/>
 			<arg value="-doc-sources=${source_path}"/>
 			<arg value="-source-path=${source_path}"/>
+			<arg value="-output=${api_output}"/>
+			<arg value="-main-title=My API Reference"/>
+			<arg value="-window-title=My Framework API Reference"/>
+			<arg value="-footer=Footer text"/>
 
 			<!-- these two arguments are needed after switching to the AIR SDK
 			with ASC 2.0 to stop weird errors -->
 			<arg value="-theme="/>
 			<arg value="-compiler.fonts.local-fonts-snapshot="/>
-
-			<arg value="-output=${api_output}"/>
 		</java>
 	</target>
 
