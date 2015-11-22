@@ -6,23 +6,23 @@
 	
 	<target name="main" depends="create_android_certificate"/>
 	
-	<target name="create_android_certificate" description="Create certificate" depends="prepare_certificate_path">
-		<echo message="Certificate for android: ${android_certificate_path}/${android_certificate_name}"/>
+	<target name="create_android_certificate" description="Create certificate" depends="prepare_cert_path">
+		<echo message="Certificate for android: ${android_cert_path}/${android_cert_name}"/>
 		<java jar="${adt}" dir="${basedir}" fork="true" failonerror="true">
 			<arg value="-certificate"/>
 			<arg value="-cn"/>
-			<arg value="${android_certificate_name}"/>
+			<arg value="${android_cert_name}"/>
 			<arg value="2048-RSA"/>
-			<arg value="${android_certificate_path}/${android_certificate_name}"/>
-			<arg value="${android_certificate_pass}"/>
+			<arg value="${android_cert_path}/${android_cert_name}"/>
+			<arg value="${android_cert_pass}"/>
 		</java>
 	</target>
 	
 	<target name="prepare_certificate_path">
 		<delete quiet="true">
-			<fileset dir="${android_certificate_path}"/>
+			<fileset dir="${android_cert_path}"/>
 		</delete>
-		<mkdir dir="${android_certificate_path}"/>
+		<mkdir dir="${android_cert_path}"/>
 	</target>
 
 </project>
