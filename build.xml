@@ -1,0 +1,8 @@
+<project name="Build" default="all" basedir=".">
+
+	<target name="all">
+		<ant dir="swc-compiling"/>
+		<ant dir="swf-compiling"/>
+	</target>
+
+</project>
