@@ -1,0 +1,80 @@
+<project name="Build ane" default="all" basedir=".">
+
+	<property environment="env"/>
+	<property file="../sdk.properties"/>
+	<property file="build.properties"/>
+
+	<target name="all" depends="prepare, swc, android, package, clear" description="Create SWC, Android libraries and packages ANE"/>
+
+	<target name="prepare">
+		<delete dir="temp"/>
+		<mkdir dir="temp/swc_temp"/>
+		<mkdir dir="temp/swc_lib"/>
+		<mkdir dir="temp/android_temp"/>
+		<mkdir dir="temp/android_lib"/>
+		<mkdir dir="temp/default_lib"/>
+	</target>
+
+	<target name="swc" description="Build SWC library">
+		<java jar="${compc}" fork="true">
+			<arg value="-load-config=${air_mobile_config}"/>
+			<arg value="-swf-version=${swc_version}"/>
+			<arg value="-source-path+=source/as3/src"/>
+			<arg value="-include-sources+=source/as3/src"/>
+			<arg value="-output=temp/swc_temp/as3_extension.swc"/>
+		</java>
+
+		<echo message="Build swc complete: temp/swc_temp/as3_extension.swc"/>
+
+		<unzip src="temp/swc_temp/as3_extension.swc" dest="temp/swc_temp"/>
+		<copy file="temp/swc_temp/library.swf" todir="temp/android_lib"/>
+		<copy file="temp/swc_temp/library.swf" todir="temp/default_lib"/>
+		<copy file="temp/swc_temp/as3_extension.swc" todir="temp/swc_lib"/>
+		<delete dir="temp/swc_temp"/>
+    </target>
+
+    <target name="android" description="Build Android Library">
+    	<echo message="Using ANDROID SDK: ${android_platform}"/>
+    	<javac compiler="${java_compiler}"
+			source="${javac_source}"
+			target="${javac_target}"
+			destdir="temp/android_temp" 
+			includeantruntime="false">
+			<src path="source/android/src"/>
+            <classpath>
+                <pathelement location="${android_platform}/android.jar"/>
+                <fileset dir="source/android/libs">
+                    <include name="**/*.jar" />
+                </fileset>
+            </classpath>
+		</javac>
+    	<jar basedir="temp/android_temp" destfile="temp/android_lib/extension.jar"/>
+
+    	<delete dir="temp/android_temp"/>
+    </target>
+
+    <target name="package" description="Create the extension package">
+		<echo message="Build ane"/>
+		<java jar="${adt}" dir="temp/" fork="true">
+			<arg value="-package"/>
+			<arg value="-target"/>
+			<arg value="ane"/>
+			<arg value="../bin/${extension_name}"/>
+			<arg value="../${extension_xml}"/>
+			<arg line="-swc swc_lib/as3_extension.swc"/>
+			<arg line="-platform Android-ARM -C android_lib/ ."/>
+			<arg line="-platform Android-x86 -C android_lib/ ."/>
+			<arg line="-platform default -C default_lib/ ."/>
+		</java>
+	</target>
+
+	<target name="clear">
+		<delete dir="temp/"/>
+	</target>
+
+	<target name="deploy">
+		<!-- copy ane file to demo project -->
+		<copy file="bin/${extension_name}" todir="../demo/ane" overwrite="true"/>
+	</target>
+
+</project>

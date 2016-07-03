@@ -5,7 +5,6 @@
 	<property file="build.properties"/>
 	
 	<target name="build" description="Build swf">
-		<echo message="Using SDK: ${AIRSDK_HOME}"/>
 		<echo message="Building swf: ${out_path}/${out_swf_name}, version: ${swf_version}, debug: ${is_debug}"/>
 		<java jar="${mxmlc}" fork="true" failonerror="true">
 			<arg value="-debug=${is_debug}"/>

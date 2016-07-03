@@ -5,10 +5,9 @@
 	<property file="build.properties"/>
 	
 	<target name="build">
-		<echo message="Using SDK: ${AIRSDK_HOME}"/>
 		<java jar="${asdoc}" failonerror="true" fork="true">
 			<arg value="-locale=en_US"/>
-			<arg value="+flexlib=${AIRSDK_HOME}/frameworks"/>
+			<arg value="+flexlib=${AIR_SDK_HOME}/frameworks"/>
 			<arg value="-load-config=${flex_config}"/>
 			<arg value="-doc-sources=${source_path}"/>
 			<arg value="-source-path=${source_path}"/>

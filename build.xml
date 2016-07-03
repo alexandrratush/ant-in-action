@@ -1,10 +1,16 @@
 <project name="Build" default="all" basedir=".">
 
+	<property environment="env"/>
+	<property file="sdk.properties"/>
+
 	<target name="all">
+		<echo message="AIR_SDK_HOME: ${AIR_SDK_HOME}"/>
+		
 		<ant dir="building-swc"/>
 		<ant dir="building-swf"/>
 		<ant dir="create-android-certificate"/>
 		<ant dir="create-asdoc"/>
+		<ant dir="building-ane"/>
 	</target>
 
 </project>
