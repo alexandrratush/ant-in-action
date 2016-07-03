@@ -4,6 +4,7 @@
 		<ant dir="building-swc"/>
 		<ant dir="building-swf"/>
 		<ant dir="create-android-certificate"/>
+		<ant dir="create-asdoc"/>
 	</target>
 
 </project>
