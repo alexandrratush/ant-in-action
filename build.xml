@@ -6,11 +6,11 @@
 	<target name="all">
 		<echo message="AIR_SDK_HOME: ${AIR_SDK_HOME}"/>
 		
-		<ant dir="building-swc"/>
-		<ant dir="building-swf"/>
-		<ant dir="create-android-certificate"/>
-		<ant dir="create-asdoc"/>
-		<ant dir="building-ane"/>
+		<ant dir="01-building-swc"/>
+		<ant dir="02-building-swf"/>
+		<ant dir="03-create-android-certificate"/>
+		<ant dir="04-create-asdoc"/>
+		<ant dir="05-building-ane"/>
 	</target>
 
 </project>
